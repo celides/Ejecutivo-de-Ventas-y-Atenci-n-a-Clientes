@@ -1,1 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juan Carlos Pérez Martínez — Ejecutivo de Ventas y Atención a Clientes</title>
+<!--
+  ══════════════════════════════════════════════════════════════
+  CV BANCARIO — JUAN CARLOS PÉREZ MARTÍNEZ
+  Enfocado en: Ejecutivo Bancario / Call Center / Ventas
+  ══════════════════════════════════════════════════════════════
+-->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bank-navy:#1a3a5c;
+    --bank-navy-dark:#0f2538;
+    --bank-navy-light:#2c5a8a;
+    --bank-gold:#c9a961;
+    --bank-gold-dark:#a88a45;
+    --bank-bg:#F5F6F8;
+    --bank-card:#FFFFFF;
+    --bank-text:#1a1a1a;
+    --bank-muted:#5c6370;
+    --bank-border:#e2e5ea;
+    --bank-green:#0e7c4a;
+    --bank-wa:#25D366;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bank-bg);
+    color:var(--bank-text);
+    font-size:14px;
+    line-height:1.6;
+  }
+  a{color:var(--bank-navy);text-decoration:none;}
+  a:hover{text-decoration:underline;}
 
+  /* TOPBAR */
+  .topbar{
+    background:#fff;
+    border-bottom:1px solid var(--bank-border);
+    position:sticky;top:0;z-index:100;
+    padding:8px 0;
+  }
+  .topbar-inner{
+    max-width:900px;margin:0 auto;padding:0 16px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;flex-wrap:wrap;
+  }
+  .logo-bank{
+    font-weight:800;font-size:17px;color:var(--bank-navy);
+    letter-spacing:-0.3px;display:flex;align-items:center;gap:8px;
+  }
+  .logo-bank .badge{
+    background:var(--bank-navy);color:var(--bank-gold);
+    padding:2px 8px;border-radius:3px;font-size:12px;
+    font-weight:700;letter-spacing:.5px;
+  }
+  .topbar-actions{display:flex;gap:6px;flex-wrap:wrap;}
+
+  .btn-sm{
+    background:#fff;color:var(--bank-navy);
+    border:1.5px solid var(--bank-navy);
+    padding:6px 12px;border-radius:16px;
+    font-family:inherit;font-weight:600;font-size:12px;
+    cursor:pointer;display:inline-flex;align-items:center;gap:4px;
+    transition:all .15s;text-decoration:none;
+  }
+  .btn-sm:hover{background:var(--bank-navy);color:#fff;text-decoration:none;}
+  .btn-sm.primary{background:var(--bank-navy);color:#fff;}
+  .btn-sm.primary:hover{background:var(--bank-navy-dark);}
+  .btn-sm.download{background:var(--bank-green);color:#fff;border-color:var(--bank-green);}
+  .btn-sm.download:hover{background:#0a5c37;border-color:#0a5c37;}
+
+  /* VISITADOS */
+  .visited{
+    background:var(--bank-navy) !important;
+    color:#fff !important;
+    border-color:var(--bank-navy) !important;
+  }
+  .visited:hover{
+    background:var(--bank-navy-dark) !important;
+    border-color:var(--bank-navy-dark) !important;
+  }
+  .btn.visited,.btn-sm.visited,.cta-btn.visited{
+    background:var(--bank-navy) !important;
+    color:#fff !important;
+    border-color:var(--bank-navy) !important;
+  }
+
+  /* CONTENEDOR */
+  .container{max-width:900px;margin:0 auto;padding:16px;}
+
+  /* TARJETAS */
+  .card{
+    background:var(--bank-card);
+    border:1px solid var(--bank-border);
+    border-radius:10px;
+    margin-bottom:12px;
+    overflow:hidden;
+  }
+  .card-pad{padding:24px;}
+
+  /* BANNER */
+  .banner{
+    height:130px;
+    background:linear-gradient(135deg,var(--bank-navy) 0%,var(--bank-navy-dark) 100%);
+    position:relative;
+  }
+  .banner::after{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(201,169,97,.25) 0%, transparent 55%),
+      radial-gradient(circle at 10% 80%, rgba(255,255,255,.08) 0%, transparent 60%);
+  }
+  .banner::before{
+    content:'';position:absolute;
+    top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg, var(--bank-gold) 0%, var(--bank-gold-dark) 100%);
+  }
+
+  /* PERFIL */
+  .profile-head{padding:0 24px 24px;position:relative;}
+  .avatar-wrap{
+    width:140px;height:140px;
+    border-radius:50%;
+    border:4px solid #fff;
+    margin-top:-75px;
+    background:var(--bank-bg);
+    display:block;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 4px 14px rgba(0,0,0,.12);
+  }
+  .avatar-wrap img{
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center 25%; /* Ajusta el rostro dentro del círculo */
+    display:block;
+    /* Si la foto original es ancha, este zoom centra el rostro */
+    transform:scale(1.35);
+    transform-origin:center 30%;
+  }
+  .name{font-size:26px;font-weight:700;margin-top:14px;line-height:1.2;color:var(--bank-navy);}
+  .headline{
+    font-size:15px;margin-top:6px;font-weight:500;
+    color:var(--bank-text);
+    padding-bottom:8px;
+    border-bottom:1px solid var(--bank-border);
+  }
+  .headline strong{color:var(--bank-navy);}
+  .location{font-size:13px;color:var(--bank-muted);margin-top:8px;}
+  .availability-pill{
+    display:inline-block;
+    background:#E8F5EE;
+    color:var(--bank-green);
+    border:1px solid #b8e0c9;
+    padding:4px 12px;
+    border-radius:14px;
+    font-size:12px;
+    font-weight:600;
+    margin-top:10px;
+  }
+
+  .contact-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:8px 18px;border-radius:18px;
+    font-size:13px;font-weight:600;cursor:pointer;
+    border:none;font-family:inherit;text-decoration:none;
+    transition:all .15s;
+  }
+  .btn-primary{background:var(--bank-navy);color:#fff;}
+  .btn-primary:hover{background:var(--bank-navy-dark);text-decoration:none;color:#fff;}
+  .btn-outline{background:#fff;color:var(--bank-navy);border:1.5px solid var(--bank-navy);}
+  .btn-outline:hover{background:#EAF0F6;text-decoration:none;}
+  .btn-ghost{background:#fff;color:var(--bank-text);border:1.5px solid var(--bank-muted);}
+  .btn-ghost:hover{background:#F5F6F8;text-decoration:none;}
+  .btn-wa{background:var(--bank-wa);color:#fff;}
+  .btn-wa:hover{background:#1ebe5b;color:#fff;text-decoration:none;}
+
+  /* SECCIONES */
+  .section-title{
+    font-size:17px;font-weight:700;margin-bottom:16px;
+    color:var(--bank-navy);
+    display:flex;align-items:center;gap:10px;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  .section-title::before{
+    content:'';width:4px;height:18px;
+    background:var(--bank-gold);border-radius:2px;
+  }
+
+  /* EXPERIENCIA */
+  .exp-item{
+    display:flex;gap:14px;padding:16px 0;
+    border-bottom:1px solid var(--bank-border);
+  }
+  .exp-item:last-child{border-bottom:none;}
+  .exp-logo{
+    width:50px;height:50px;border-radius:8px;
+    background:var(--bank-navy);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:var(--bank-gold);
+    font-size:15px;flex-shrink:0;
+    border:1px solid var(--bank-navy-dark);
+  }
+  .exp-body{flex:1;}
+  .exp-role{font-size:15.5px;font-weight:700;color:var(--bank-text);}
+  .exp-company{font-size:13.5px;margin-top:2px;color:var(--bank-navy);font-weight:600;}
+  .exp-meta{font-size:12.5px;color:var(--bank-muted);margin-top:2px;}
+  .exp-desc{list-style:none;margin-top:10px;font-size:13.5px;}
+  .exp-desc li{margin-bottom:5px;padding-left:16px;position:relative;line-height:1.55;}
+  .exp-desc li::before{content:'▸';position:absolute;left:0;color:var(--bank-gold-dark);font-weight:700;}
+  .exp-desc li.highlight{
+    background:#FBF6E9;
+    border-left:3px solid var(--bank-gold);
+    padding:10px 12px 10px 26px;
+    border-radius:0 6px 6px 0;
+    margin-top:8px;
+  }
+  .exp-desc li.highlight::before{content:'★';left:8px;color:var(--bank-gold-dark);}
+
+  /* SKILLS */
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{
+    background:#EAF0F6;color:var(--bank-navy);
+    padding:6px 14px;border-radius:14px;
+    font-size:12.5px;font-weight:600;
+  }
+  .tag-alt{background:#F5F6F8;color:var(--bank-text);font-weight:500;}
+
+  /* EDUCACIÓN */
+  .edu-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--bank-border);}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-icon{
+    width:50px;height:50px;border-radius:8px;
+    background:#EAF0F6;color:var(--bank-navy);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;flex-shrink:0;
+  }
+  .edu-role{font-size:15px;font-weight:700;color:var(--bank-text);}
+  .edu-inst{font-size:13.5px;margin-top:2px;color:var(--bank-navy);font-weight:500;}
+  .edu-meta{font-size:12.5px;color:var(--bank-muted);margin-top:3px;}
+
+  /* CERT LIST */
+  .cert-list{list-style:none;}
+  .cert-list li{
+    font-size:13.5px;padding:9px 0 9px 24px;
+    position:relative;border-bottom:1px dashed var(--bank-border);
+  }
+  .cert-list li:last-child{border-bottom:none;}
+  .cert-list li::before{content:'✓';position:absolute;left:0;color:var(--bank-gold-dark);font-weight:800;}
+
+  /* CTA */
+  .cta-final{
+    background:linear-gradient(135deg, var(--bank-navy) 0%, var(--bank-navy-dark) 100%);
+    color:#fff;
+    border-radius:12px;
+    padding:32px 28px;
+    text-align:center;
+    margin:20px 0;
+    position:relative;
+    overflow:hidden;
+    border-top:3px solid var(--bank-gold);
+  }
+  .cta-final::before{
+    content:'';position:absolute;top:-60px;right:-60px;
+    width:220px;height:220px;
+    background:radial-gradient(circle, rgba(201,169,97,.2) 0%, transparent 70%);
+    border-radius:50%;
+  }
+  .cta-final h3{
+    font-size:22px;font-weight:700;
+    margin-bottom:8px;position:relative;z-index:1;
+    color:#fff;
+  }
+  .cta-final h3 span{color:var(--bank-gold);}
+  .cta-final .cta-sub{
+    font-size:13.5px;opacity:.92;margin-bottom:8px;
+    position:relative;z-index:1;
+  }
+  .cta-final .cta-horario{
+    display:inline-block;
+    background:rgba(201,169,97,.18);
+    border:1px solid rgba(201,169,97,.4);
+    padding:6px 16px;border-radius:14px;
+    font-size:12.5px;font-weight:600;
+    margin:10px 0 20px;
+    color:var(--bank-gold);
+    position:relative;z-index:1;
+  }
+  .cta-buttons{
+    display:flex;flex-wrap:wrap;gap:10px;
+    justify-content:center;position:relative;z-index:1;
+  }
+  .cta-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:24px;
+    font-size:14px;font-weight:700;
+    cursor:pointer;border:none;font-family:inherit;
+    text-decoration:none;
+    transition:transform .15s,box-shadow .15s;
+  }
+  .cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none;}
+  .cta-btn.wa{background:#25D366;color:#fff;}
+  .cta-btn.mail{background:var(--bank-gold);color:var(--bank-navy-dark);}
+
+  /* FOOTER */
+  .footer{
+    text-align:center;padding:24px 16px 30px;
+    font-size:12px;color:var(--bank-muted);
+  }
+  .footer .version{
+    display:inline-block;background:#EAF0F6;
+    color:var(--bank-navy);padding:3px 10px;
+    border-radius:10px;font-size:11px;font-weight:600;
+    margin-top:8px;letter-spacing:.4px;
+  }
+
+  /* WHATSAPP FLOTANTE */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;
+    width:56px;height:56px;background:var(--bank-wa);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:9999;
+    transition:transform .2s;
+  }
+  .wa-float:hover{transform:scale(1.08);text-decoration:none;}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+
+  /* PDF LINKS */
+  .pdf-links{
+    display:none;
+    background:#F9FAFB;
+    border:1px solid var(--bank-border);
+    border-radius:8px;
+    padding:18px 22px;margin-top:18px;
+  }
+  .pdf-links h3{
+    font-size:15px;color:var(--bank-navy);
+    margin-bottom:12px;padding-bottom:6px;
+    border-bottom:1px solid var(--bank-border);
+  }
+  .pdf-links ul{list-style:none;font-size:12px;}
+  .pdf-links li{padding:5px 0;word-break:break-all;color:#333;}
+  .pdf-links li strong{color:var(--bank-text);}
+  .pdf-links li code{
+    font-family:'Courier New',monospace;
+    background:#fff;padding:1px 5px;border-radius:3px;
+    font-size:11.5px;color:var(--bank-navy);
+  }
+  .qr-block{
+    text-align:center;margin-top:18px;padding-top:14px;
+    border-top:1px solid var(--bank-border);
+  }
+  .qr-block img{
+    width:130px;height:130px;
+    border:1px solid var(--bank-border);
+    border-radius:6px;padding:6px;background:#fff;
+  }
+  .qr-block p{font-size:11px;color:var(--bank-muted);margin-top:6px;}
+
+  /* NOTA */
+  .note{
+    background:#FBF6E9;
+    border-left:3px solid var(--bank-gold);
+    padding:12px 16px;border-radius:4px;
+    font-size:12.5px;color:#5c4a1f;margin-bottom:16px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:640px){
+    .container{padding:8px;}
+    .card-pad{padding:18px;}
+    .profile-head{padding:0 18px 18px;}
+    .avatar-wrap{width:115px;height:115px;margin-top:-62px;}
+    .name{font-size:21px;}
+    .headline{font-size:13.5px;}
+    .banner{height:100px;}
+    .btn-sm{font-size:11px;padding:5px 10px;}
+    .cta-final{padding:24px 18px;}
+    .cta-final h3{font-size:18px;}
+    .section-title{font-size:15px;}
+  }
+
+  /* PRINT */
+  @media print{
+    .topbar,.wa-float{display:none !important;}
+    body{background:#fff;font-size:12px;}
+    .card{box-shadow:none;border:1px solid #ccc;page-break-inside:avoid;}
+    .banner{
+      background:var(--bank-navy) !important;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+      height:70px;
+    }
+    .cta-final{display:none !important;}
+    .btn,.btn-sm{display:none !important;}
+    a{color:var(--bank-text);}
+    .pdf-links{display:block !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="logo-bank"><span class="badge">CV</span>Juan Carlos Pérez Martínez</div>
+    <div class="topbar-actions">
+      <button class="btn-sm download" onclick="window.print()">📥 Descargar PDF</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- PERFIL -->
+  <div class="card">
+    <div class="banner"></div>
+    <div class="profile-head">
+      <div class="avatar-wrap">
+        <img src="https://i.postimg.cc/J4ySVWkS/Screenshot-20260523-151443-Gallery.jpg"
+             alt="Juan Carlos Pérez Martínez"
+             onerror="this.parentElement.innerHTML='<div style=&quot;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:var(--bank-navy)&quot;>JC</div>'">
+      </div>
+
+      <h1 class="name">Juan Carlos Pérez Martínez</h1>
+      <div class="headline">
+        <strong>Ejecutivo de Ventas y Atención a Clientes</strong> ·
+        Venta Consultiva · Call Center · Colocación de Productos
+      </div>
+      <div class="location">
+        📍 Querétaro, Qro. · Disponibilidad presencial · Reubicación inmediata
+      </div>
+      <div class="availability-pill">
+        ✅ Ingreso inmediato · Documentación completa
+      </div>
+
+      <div class="contact-row">
+        <a href="tel:524464044521" class="btn btn-primary" data-visited="tel">📞 446 404 45 21</a>
+        <a href="https://wa.me/524464044521?text=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Ejecutivo%20Bancario." target="_blank" rel="noopener" class="btn btn-wa" data-visited="wa">💬 WhatsApp</a>
+        <a href="mailto:celides10@gmail.com" class="btn btn-outline" data-visited="mail">✉️ Correo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERFIL PROFESIONAL -->
+  <div class="card card-pad">
+    <h2 class="section-title">Perfil Profesional</h2>
+    <p style="font-size:14px;line-height:1.75;">
+      Ejecutivo comercial con más de <strong>5 años de experiencia en ventas consultivas,
+      atención a clientes y cierre de contratos</strong> en sectores de telecomunicaciones y servicios
+      digitales. Especialista en <strong>prospección, manejo de objeciones y cumplimiento de metas</strong>.
+      Perfil proactivo, orientado a resultados y con excelente comunicación telefónica y presencial.
+      Disponibilidad inmediata para integrarme al horario de <strong>1:00 pm a 7:00 pm</strong>.
+    </p>
+  </div>
+
+  <!-- EXPERIENCIA -->
+  <div class="card card-pad">
+    <h2 class="section-title">Experiencia Profesional</h2>
+
+    <div class="exp-item">
+      <div class="exp-logo" style="background:#E30613;color:#fff;border-color:#b60510;">M</div>
+      <div class="exp-body">
+        <div class="exp-role">Asesor de Ventas · Contratos de Servicios de Internet</div>
+        <div class="exp-company">Megacable</div>
+        <div class="exp-meta">Querétaro, Qro. · 2025 – 2026</div>
+        <ul class="exp-desc">
+          <li>Cierre de <strong>4 a 12 contratos semanales</strong> de internet, telefonía y TV para clientes residenciales y PyMEs, con cumplimiento constante de metas.</li>
+          <li><strong>Atención telefónica y presencial</strong> a clientes: asesoría sobre planes, cobertura y equipamiento; resolución de objeciones en tiempo real.</li>
+          <li>Prospección en campo y gestión de <strong>cartera activa</strong> de clientes, con seguimiento post-venta para renovaciones.</li>
+          <li class="highlight"><strong>Logro destacado:</strong> identifiqué que la prospección orgánica limitaba el volumen de cierre e implementé campañas propias en <strong>Meta Business Suite (Facebook Ads)</strong> con inversión personal. Resultado: <strong>escalé a 15-16 contratos semanales</strong>, triplicando el volumen base.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">CS</div>
+      <div class="exp-body">
+        <div class="exp-role">Consultor Comercial Senior · Tech Sales Specialist</div>
+        <div class="exp-company">Estrategias de Conectividad y Soluciones Digitales</div>
+        <div class="exp-meta">Querétaro, Qro. · 2022 – 2025</div>
+        <ul class="exp-desc">
+          <li>Cierre de <strong>contratos corporativos</strong> de infraestructura, conectividad y SaaS con empresas de distintos giros.</li>
+          <li>Diseño de <strong>embudos automatizados de prospección B2B/B2C</strong> integrando Meta Ads e IA generativa.</li>
+          <li><strong>Demos técnicas y presentaciones</strong> a directores, gerentes y tomadores de decisión.</li>
+          <li>Negociación directa con C-levels y cierre de contratos de alto valor.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">IEA</div>
+      <div class="exp-body">
+        <div class="exp-role">Maestro de Bachillerato</div>
+        <div class="exp-company">Instituto de Educación de Aguascalientes (I.E.A.)</div>
+        <div class="exp-meta">Aguascalientes · jun 2020 – dic 2022</div>
+        <ul class="exp-desc">
+          <li>Diseño e impartición de estrategias didácticas por competencias.</li>
+          <li><strong>Comunicación clara en público</strong> y presentaciones ante grupos de 30+ estudiantes.</li>
+          <li>Desarrollo de habilidades de <strong>escucha activa, empatía y manejo de grupos</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">FC</div>
+      <div class="exp-body">
+        <div class="exp-role">Gerente y Propietario</div>
+        <div class="exp-company">Fashion Celular · Tienda de telefonía celular</div>
+        <div class="exp-meta">Querétaro, Qro. · 1995 – 2014</div>
+        <ul class="exp-desc">
+          <li>Operación integral: compras, <strong>cobranza</strong>, proveedores, personal y marketing local.</li>
+          <li><strong>Atención directa a clientes</strong> y resolución de incidencias en sitio.</li>
+          <li>Manejo de efectivo y control de cartera de clientes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo">MP</div>
+      <div class="exp-body">
+        <div class="exp-role">Gerente de Sucursal</div>
+        <div class="exp-company">Multipack · Transporte de correspondencia</div>
+        <div class="exp-meta">San Juan del Río, Qro. · 1993 – 1995</div>
+        <ul class="exp-desc">
+          <li>Supervisión de operación de sucursal, personal y logística.</li>
+          <li>Atención a clientes corporativos y resolución de incidencias.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-logo" style="background:#6B1F2E;color:#fff;border-color:#4a1420;">INE</div>
+      <div class="exp-body">
+        <div class="exp-role">Capacitador Asistente Electoral</div>
+        <div class="exp-company">Instituto Nacional Electoral (INE) · INEGI</div>
+        <div class="exp-meta">2018 – 2021 · Procesos electorales y Censo 2020</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- EDUCACIÓN -->
+  <div class="card card-pad">
+    <h2 class="section-title">Educación</h2>
+
+    <div class="edu-item">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-role">Licenciatura en Artes Visuales</div>
+        <div class="edu-inst">Universidad de las Artes — Aguascalientes</div>
+        <div class="edu-meta">Título profesional · Cédula en trámite</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">💻</div>
+      <div>
+        <div class="edu-role">Bootcamp Fullstack Developer</div>
+        <div class="edu-inst">Academia Internacional Funval &amp; Mentors International</div>
+        <div class="edu-meta">Frontend, Backend y automatización · Formación complementaria</div>
+      </div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-icon">📘</div>
+      <div>
+        <div class="edu-role">Certificado de Secundaria Terminada</div>
+        <div class="edu-inst">Documento disponible para contratación</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- APTITUDES -->
+  <div class="card card-pad">
+    <h2 class="section-title">Aptitudes Clave</h2>
+    <div class="tags">
+      <span class="tag">Ventas consultivas</span>
+      <span class="tag">Atención telefónica a clientes</span>
+      <span class="tag">Cierre de contratos</span>
+      <span class="tag">Manejo de objeciones</span>
+      <span class="tag">Cobranza</span>
+      <span class="tag">Prospección y lead gen</span>
+      <span class="tag">Negociación B2B / B2C</span>
+      <span class="tag">Comunicación efectiva</span>
+      <span class="tag">Cumplimiento de metas</span>
+      <span class="tag">Trabajo bajo presión</span>
+      <span class="tag tag-alt">CRM y herramientas digitales</span>
+      <span class="tag tag-alt">Meta Business Suite</span>
+      <span class="tag tag-alt">Paquetería Office</span>
+      <span class="tag tag-alt">Resolución de problemas</span>
+      <span class="tag tag-alt">Empatía y escucha activa</span>
+    </div>
+  </div>
+
+  <!-- CERTIFICACIONES -->
+  <div class="card card-pad">
+    <h2 class="section-title">Certificaciones Destacadas</h2>
+    <ul class="cert-list">
+      <li><strong>Ventas y Servicio al Cliente</strong> — Weber State University &amp; Mentors International (2021)</li>
+      <li><strong>E-commerce y Marketing Digital</strong> — Mentors International (2021)</li>
+      <li><strong>Networking: Generando Relaciones Ganar-Ganar</strong> — CCIA (2018)</li>
+      <li><strong>Innovación y Emprendimiento</strong> — CCIA Aguascalientes (2018)</li>
+      <li><strong>Resiliencia Emocional</strong> — La Iglesia de Jesucristo SUD (2021)</li>
+      <li><strong>Finanzas Personales</strong> — LDS Business College (2017)</li>
+    </ul>
+  </div>
+
+  <!-- DISPONIBILIDAD -->
+  <div class="card card-pad">
+    <h2 class="section-title">Disponibilidad</h2>
+    <div style="display:grid;grid-template-columns:1fr;gap:10px;font-size:13.5px;">
+      <div style="display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--bank-border);">
+        <span style="color:var(--bank-gold-dark);font-weight:800;">🕒</span>
+        <span><strong>Horario:</strong> Lunes a sábado, 1:00 pm – 7:00 pm</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--bank-border);">
+        <span style="color:var(--bank-gold-dark);font-weight:800;">⚡</span>
+        <span><strong>Ingreso:</strong> Inmediato</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;padding:8px 0;">
+        <span style="color:var(--bank-gold-dark);font-weight:800;">📄</span>
+        <span><strong>Documentación completa:</strong> NSS, RFC con constancia, CURP, comprobante de estudios, comprobante de domicilio en Querétaro, INE.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta-final">
+    <h3>¿Te interesa mi perfil? <span>Hablemos.</span></h3>
+    <p class="cta-sub">Disponibilidad inmediata para entrevista y contratación.</p>
+    <div class="cta-horario">🕒 Lunes a sábado · 1:00 pm – 7:00 pm</div>
+    <div class="cta-buttons">
+      <a href="https://wa.me/524464044521?text=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Ejecutivo%20Bancario.%20%C2%BFTienes%20disponibilidad%20para%20una%20entrevista?"
+         target="_blank" rel="noopener" class="cta-btn wa" data-visited="cta-wa">
+        💬 Contactar por WhatsApp
+      </a>
+      <a href="mailto:celides10@gmail.com?subject=Inter%C3%A9s%20en%20tu%20perfil%20-%20Ejecutivo%20Bancario&body=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Ejecutivo%20Bancario.%20%C2%BFTienes%20disponibilidad%20para%20una%20entrevista?"
+         class="cta-btn mail" data-visited="cta-mail">
+        ✉️ Enviar correo
+      </a>
+    </div>
+  </div>
+
+  <!-- ENLACES PDF -->
+  <div class="pdf-links">
+    <h3>📎 Enlaces de contacto</h3>
+    <ul>
+      <li><strong>Correo:</strong> <code>celides10@gmail.com</code></li>
+      <li><strong>WhatsApp / Teléfono:</strong> <code>+52 446 404 45 21</code></li>
+      <li><strong>Ubicación:</strong> Querétaro, Qro. · Disponibilidad presencial</li>
+      <li><strong>Horario disponible:</strong> Lunes a sábado, 1:00 pm – 7:00 pm</li>
+    </ul>
+    <div class="qr-block">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fportafolio-alpha-sand-47.vercel.app" alt="QR Portafolio">
+      <p>Escanea para ver portafolio completo</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    © <span id="year"></span> Juan Carlos Pérez Martínez · CV Ejecutivo Bancario
+    <br>
+    <span class="version">📌 Versión Bancaria 1.0</span>
+  </div>
+
+</div>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/524464044521?text=Hola%20Juan%20Carlos,%20vimos%20tu%20perfil%20para%20la%20vacante%20de%20Ejecutivo%20Bancario."
+   class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"
+   data-visited="wa-float">
+  <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // VISITADOS
+  const VISITED_KEY = 'jc_cv_bancario_visited';
+  function getVisited(){
+    try { return JSON.parse(localStorage.getItem(VISITED_KEY)) || []; }
+    catch(e){ return []; }
+  }
+  function setVisited(arr){
+    try { localStorage.setItem(VISITED_KEY, JSON.stringify(arr)); } catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    const target = e.target.closest('[data-visited]');
+    if(target){
+      const id = target.dataset.visited;
+      target.classList.add('visited');
+      const visited = getVisited();
+      if(!visited.includes(id)){
+        visited.push(id);
+        setVisited(visited);
+      }
+    }
+  });
+  (function applyVisited(){
+    const visited = getVisited();
+    document.querySelectorAll('[data-visited]').forEach(el=>{
+      if(visited.includes(el.dataset.visited)){
+        el.classList.add('visited');
+      }
+    });
+  })();
+
+  // RESET con doble clic en el logo
+  document.querySelector('.logo-bank').addEventListener('dblclick', ()=>{
+    if(confirm('¿Resetear botones visitados?')){
+      localStorage.removeItem(VISITED_KEY);
+      location.reload();
+    }
+  });
+</script>
+
+</body>
+</html>
