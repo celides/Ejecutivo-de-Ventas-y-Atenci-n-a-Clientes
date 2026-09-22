@@ -121,8 +121,21 @@ body {
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--glow);
-  margin-bottom: 36px;
+  margin-bottom: 12px;
   letter-spacing: .3px;
+}
+
+/* ── DEDICATORIA ── */
+.dedication {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(245,158,11,.3);
+  border-bottom: 1px solid rgba(245,158,11,.3);
+  padding: 8px 0;
+  display: inline-block;
 }
 
 /* Counters */
@@ -193,7 +206,7 @@ body {
 
 /* ── SECTION WRAPPER ── */
 .section {
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 64px 24px;
 }
@@ -271,6 +284,28 @@ body {
   font-weight: 500;
   color: var(--white);
   line-height: 1.4;
+}
+
+/* ── BOTÓN COPIAR ── */
+.copy-btn {
+    background: rgba(96,165,250,.15);
+    border: 1px solid rgba(96,165,250,.3);
+    color: var(--glow);
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background .2s, transform .1s;
+    font-family: 'Inter', sans-serif;
+    vertical-align: middle;
+}
+.copy-btn:hover {
+    background: rgba(96,165,250,.3);
+}
+.copy-btn:active {
+    transform: scale(0.95);
 }
 
 /* ── QR SECTION ── */
@@ -526,6 +561,8 @@ body {
   .tl-badge, .achievement-highlight { border-color: #F59E0B; color: #92400E; background: #fef3c7; }
   .hero-shape { display: none; }
   .qr-section img { border: 1px solid #e2e8f0; }
+  .copy-btn { display: none; }
+  .dedication { color: #92400E; border-color: #F59E0B; }
 }
 
 @media (max-width: 600px) {
@@ -553,6 +590,9 @@ body {
 
   <h1 class="hero-name">Juan Carlos Pérez Martínez</h1>
   <p class="hero-title">Ejecutivo de Ventas &amp; Atención a Clientes · Querétaro, México</p>
+  
+  <!-- DEDICATORIA -->
+  <p class="dedication">Preparado exclusivamente para: Srita. Divian Villegas</p>
 
   <!-- ANIMATED COUNTERS -->
   <div class="counters">
@@ -615,15 +655,27 @@ body {
     </div>
     <div class="data-item">
       <div class="di-label">CURP</div>
-      <div class="di-value">PEMJ690622HDFRRN04</div>
+      <div class="di-value">PEMJ690622HDFRRN04 <button class="copy-btn" onclick="copyText('PEMJ690622HDFRRN04')">📋 Copiar</button></div>
     </div>
     <div class="data-item">
       <div class="di-label">RFC</div>
-      <div class="di-value">PEMJ690622QL2</div>
+      <div class="di-value">PEMJ690622QL2 <button class="copy-btn" onclick="copyText('PEMJ690622QL2')">📋 Copiar</button></div>
     </div>
     <div class="data-item">
       <div class="di-label">NSS</div>
-      <div class="di-value">28906903852</div>
+      <div class="di-value">28906903852 <button class="copy-btn" onclick="copyText('28906903852')">📋 Copiar</button></div>
+    </div>
+    <div class="data-item">
+      <div class="di-label">Estado Civil</div>
+      <div class="di-value">Casado</div>
+    </div>
+    <div class="data-item">
+      <div class="di-label">Número de Cuenta Santander</div>
+      <div class="di-value">56930285585 <button class="copy-btn" onclick="copyText('56930285585')">📋 Copiar</button></div>
+    </div>
+    <div class="data-item">
+      <div class="di-label">CLABE Interbancaria</div>
+      <div class="di-value">014680569302855855 <button class="copy-btn" onclick="copyText('014680569302855855')">📋 Copiar</button></div>
     </div>
     <div class="data-item">
       <div class="di-label">Domicilio</div>
@@ -632,6 +684,18 @@ body {
     <div class="data-item">
       <div class="di-label">Disponibilidad</div>
       <div class="di-value">Inmediata para entrevista</div>
+    </div>
+    <div class="data-item">
+      <div class="di-label">Primera vez en Santander</div>
+      <div class="di-value">Sí, es mi primera vez ingresando a esta empresa</div>
+    </div>
+    <div class="data-item">
+      <div class="di-label">Familiares en Santander</div>
+      <div class="di-value">No tengo familiares trabajando en Santander</div>
+    </div>
+    <div class="data-item">
+      <div class="di-label">Nómina Santander</div>
+      <div class="di-value">Sí cuento con número de nómina de Santander</div>
     </div>
   </div>
 
@@ -806,7 +870,6 @@ body {
       <div class="doc-card">
         <span class="doc-name">Credencial INE (Frente y Reverso)</span>
         <div class="doc-btns">
-          <!-- CORREGIDO: Nuevo enlace de la credencial INE -->
           <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg" target="_blank" class="dbtn dbtn-v">Ver</a>
           <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg" download class="dbtn dbtn-d">↓</a>
         </div>
@@ -846,27 +909,27 @@ body {
           <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/2%20SAT%20TRASERA.jpg" download class="dbtn dbtn-d">↓</a>
         </div>
       </div>
- <div class="doc-card">
-  <span class="doc-name">Credencial INE (Frente y Reverso)</span>
-  <div class="doc-btns">
-    <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg" target="_blank" class="dbtn dbtn-v">Ver</a>
-    <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg" download class="dbtn dbtn-d">↓</a>
-  </div>
-</div>
       <div class="doc-card">
-  <span class="doc-name">Comprobante de Domicilio (CFE)</span>
-  <div class="doc-btns">
-    <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/comprobante_de_domicilio.jpg" target="_blank" class="dbtn dbtn-v">Ver</a>
-    <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/comprobante_de_domicilio.jpg" download class="dbtn dbtn-d">↓</a>
-  </div>
-</div>
+        <span class="doc-name">Comprobante de Domicilio (Imagen)</span>
+        <div class="doc-btns">
+          <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/comprobante_de_domicilio.jpg" target="_blank" class="dbtn dbtn-v">Ver</a>
+          <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/comprobante_de_domicilio.jpg" download class="dbtn dbtn-d">↓</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-name">Comprobante de Domicilio (PDF)</span>
+        <div class="doc-btns">
+          <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf" target="_blank" class="dbtn dbtn-v">Ver</a>
+          <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf" download class="dbtn dbtn-d">↓</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <footer class="footer">
-  Juan Carlos Pérez Martínez · celides10@gmail.com · Querétaro, México
+  <p>Juan Carlos Pérez Martínez · celides10@gmail.com · Querétaro, México</p>
+  <p style="margin-top: 8px; font-size: 12px; color: var(--glow);">Documento preparado exclusivamente para el proceso de selección de la <strong>Srita. Divian Villegas</strong></p>
 </footer>
 
 <!-- FABS -->
@@ -874,6 +937,24 @@ body {
 <button class="print-fab" onclick="window.print()">📄 Descargar PDF</button>
 
 <script>
+// ── FUNCIÓN COPIAR AL PORTAPAPELES ──
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = event.target;
+        const original = btn.innerHTML;
+        btn.innerHTML = '✅ ¡Copiado!';
+        btn.style.background = 'rgba(34,197,94,.3)';
+        btn.style.color = '#4ade80';
+        setTimeout(() => {
+            btn.innerHTML = original;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 1500);
+    }).catch(err => {
+        alert('Error al copiar: ' + err);
+    });
+}
+
 // ── COUNTER ANIMATION ──
 function animateCounter(el) {
   const target   = +el.dataset.target;
@@ -937,8 +1018,8 @@ function downloadAll() {
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/NSS.jpg',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20SAT%20PORTADA.jpg',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/2%20SAT%20TRASERA.jpg',
-    'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf',
-    'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE_CARTA.pdf'
+    'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/comprobante_de_domicilio.jpg',
+    'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf'
   ];
   urls.forEach((url, i) => setTimeout(() => window.open(url, '_blank'), i * 350));
 }
