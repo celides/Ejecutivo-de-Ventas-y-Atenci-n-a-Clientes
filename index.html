@@ -273,6 +273,34 @@ body {
   line-height: 1.4;
 }
 
+/* ── QR SECTION ── */
+.qr-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.qr-section img {
+  width: 180px;
+  height: 180px;
+  border: 3px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  background: #fff;
+  margin-bottom: 12px;
+}
+.qr-section p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--glow);
+  letter-spacing: .5px;
+}
+
 /* ── TIMELINE ── */
 .timeline { position: relative; }
 .timeline::before {
@@ -486,7 +514,7 @@ body {
   .counter-num { color: #0B1120; }
   .counter-label { color: #475569; }
   .section { padding: 32px 24px; }
-  .tl-body, .profile-card, .data-item, .edu-card, .lang-card {
+  .tl-body, .profile-card, .data-item, .edu-card, .lang-card, .qr-section {
     background: #f8fafc; border-color: #e2e8f0;
   }
   .tl-body, .tl-desc, .profile-card p { color: #334155; }
@@ -497,6 +525,7 @@ body {
   .skill-fill { background: #2563EB; }
   .tl-badge, .achievement-highlight { border-color: #F59E0B; color: #92400E; background: #fef3c7; }
   .hero-shape { display: none; }
+  .qr-section img { border: 1px solid #e2e8f0; }
 }
 
 @media (max-width: 600px) {
@@ -605,6 +634,12 @@ body {
       <div class="di-value">Inmediata para entrevista</div>
     </div>
   </div>
+
+  <!-- CÓDIGO QR -->
+  <div class="qr-section">
+    <img src="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/codigo-qr-cv-virtual.png" alt="Código QR CV Virtual">
+    <p>Escanea para ver mi CV Virtual</p>
+  </div>
 </div>
 
 <!-- EXPERIENCIA LABORAL -->
@@ -621,6 +656,7 @@ body {
         <div class="tl-company">Megacable</div>
         <div class="tl-role">Vendedor de Servicios — Contratos de Internet</div>
         <div class="tl-desc">Venta de contratos de internet residencial y empresarial mediante prospección directa. Cierre de ventas, atención al cliente y seguimiento postventa en la zona de Querétaro.</div>
+        <div class="tl-badge">⭐ Cumplimiento constante de metas mensuales de venta</div>
       </div>
     </div>
 
@@ -644,6 +680,7 @@ body {
         <div class="tl-company">Fashion Celular</div>
         <div class="tl-role">Gerente y Propietario — Querétaro, México</div>
         <div class="tl-desc">Venta de contratos de telefonía celular e internet. Gestión de inventarios, personal y relación con proveedores Telmex y Movistar.</div>
+        <div class="tl-badge">⭐ Crecimiento sostenido de cartera de clientes</div>
       </div>
     </div>
 
@@ -654,6 +691,7 @@ body {
         <div class="tl-company">Multipack</div>
         <div class="tl-role">Gerente de Sucursal — San Juan del Río, Querétaro</div>
         <div class="tl-desc">Gestión operativa de sucursal de transporte y logística de correspondencia.</div>
+        <div class="tl-badge">⭐ Optimización de rutas de distribución</div>
       </div>
     </div>
 
@@ -763,6 +801,14 @@ body {
         <div class="doc-btns">
           <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/TITULOTAMA%C3%91O-CARTAFRENTE--web.jpg" target="_blank" class="dbtn dbtn-v">Ver</a>
           <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/TITULOTAMA%C3%91O-CARTAFRENTE--web.jpg" download class="dbtn dbtn-d">↓</a>
+        </div>
+      </div>
+      <div class="doc-card">
+        <span class="doc-name">Credencial INE (Frente y Reverso)</span>
+        <div class="doc-btns">
+          <!-- CORREGIDO: Nuevo enlace de la credencial INE -->
+          <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg" target="_blank" class="dbtn dbtn-v">Ver</a>
+          <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg" download class="dbtn dbtn-d">↓</a>
         </div>
       </div>
       <div class="doc-card">
@@ -884,6 +930,7 @@ function downloadAll() {
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20Acta%20de%20nacimiento%20nuevo%20formato%20juan%20carlos.jpg',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/CARTILLA.JPG',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/TITULOTAMA%C3%91O-CARTAFRENTE--web.jpg',
+    'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/credencial_ine_carta.jpg',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20FRONTAL.jpg',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20TRADERA.jpg',
     'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/NSS.jpg',
