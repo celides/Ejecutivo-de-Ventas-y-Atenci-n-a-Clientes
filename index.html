@@ -28,14 +28,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 0 #142850, 0 12px 20px rgba(0,0,0,0.3);
             position: relative;
             z-index: 10;
+            border-bottom: 4px solid #0f1f3d;
         }
         .header-bar h1 {
             margin: 0;
             font-size: 28px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         .header-bar p {
             margin: 5px 0 0;
@@ -48,7 +49,7 @@
             border-radius: 50%;
             border: 4px solid #fff;
             object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
         .content {
             padding: 30px;
@@ -98,11 +99,77 @@
             font-weight: bold;
             color: #1e3c72;
         }
+        /* Botones de contacto */
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+        .btn-email {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #EA4335;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .btn-email:hover {
+            transform: scale(1.05);
+            background-color: #c5221f;
+        }
+        /* Sección de Documentos */
         .documents-section {
             padding: 0 30px 30px 30px;
-        }
-        .documents-section h2 {
             text-align: center;
+        }
+        .btn-toggle-docs {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+            margin-bottom: 20px;
+        }
+        .btn-toggle-docs:hover {
+            transform: translateY(-2px);
+        }
+        .docs-container {
+            display: none;
+            text-align: left;
+        }
+        .docs-container.active {
+            display: block;
         }
         .download-all-btn {
             display: block;
@@ -117,13 +184,11 @@
             border-radius: 10px;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             border: none;
         }
         .download-all-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            background: #1e7e34;
         }
         .doc-item {
             display: flex;
@@ -134,16 +199,17 @@
             margin-bottom: 10px;
             border-radius: 8px;
             border-left: 5px solid #2a5298;
-            transition: background-color 0.2s;
-        }
-        .doc-item:hover {
-            background-color: #e9ecef;
         }
         .doc-name {
             font-weight: 600;
             font-size: 16px;
+            flex: 1;
         }
-        .download-btn {
+        .doc-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-view {
             background-color: #007bff;
             color: white;
             padding: 8px 16px;
@@ -153,13 +219,26 @@
             font-weight: bold;
             transition: background-color 0.2s;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            cursor: pointer;
         }
-        .download-btn:hover {
+        .btn-view:hover {
             background-color: #0056b3;
         }
+        .btn-download {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .btn-download:hover {
+            background-color: #1e7e34;
+        }
         /* Botón flotante de WhatsApp */
-        .whatsapp-btn {
+        .whatsapp-float {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -177,8 +256,67 @@
             z-index: 1000;
             transition: transform 0.2s;
         }
-        .whatsapp-btn:hover {
+        .whatsapp-float:hover {
             transform: scale(1.1);
+        }
+        /* Botón de Descargar PDF */
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #ffc107;
+            color: #333;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .print-btn:hover {
+            background-color: #e0a800;
+        }
+        /* Estilos para impresión */
+        @media print {
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                border-radius: 0;
+            }
+            .header-bar {
+                box-shadow: none;
+                border-bottom: none;
+            }
+            .no-print, .print-btn, .whatsapp-float, .contact-buttons, .documents-section, .qr-section {
+                display: none !important;
+            }
+            .content {
+                display: block;
+                padding: 20px;
+            }
+            .left-column, .right-column {
+                width: 100%;
+            }
+            .info-list li {
+                font-size: 14px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            .header-bar h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -203,10 +341,22 @@
                     <li><strong>RFC:</strong> PEMJ690622QL2</li>
                     <li><strong>NSS:</strong> 28906903852</li>
                     <li><strong>Dirección:</strong> Calle Licenciado Parra 56, Barrio de San Francisquito, C.P. 76058, Querétaro, Qro.</li>
-                    <li><strong>Teléfono:</strong> 449-268-67-05 / 55-3308-70-80</li>
                     <li><strong>Email:</strong> celides10@gmail.com</li>
                     <li><strong>Disponibilidad:</strong> Para agendar entrevista con el reclutador</li>
                 </ul>
+
+                <!-- Botones de contacto -->
+                <div class="contact-buttons no-print">
+                    <a href="https://wa.me/524464044521" class="btn-whatsapp" target="_blank">
+                        <span>📱</span> WhatsApp: 446 404 45 21
+                    </a>
+                    <a href="https://wa.me/525643011140" class="btn-whatsapp" target="_blank">
+                        <span>📱</span> WhatsApp: 5643011140
+                    </a>
+                    <a href="mailto:celides10@gmail.com" class="btn-email">
+                        <span>✉️</span> Enviar Correo
+                    </a>
+                </div>
 
                 <h2>Perfil Profesional</h2>
                 <p style="font-size: 15px; line-height: 1.6;">
@@ -227,17 +377,17 @@
                 <h2>Experiencia Laboral</h2>
                 <ul class="info-list">
                     <li>
-                        <strong>Rentología (Negocio Propio)</strong><br>
-                        Vendedor y Administrador de Propiedades<br>
-                        <em>Duración: Actualidad</em><br>
-                        Venta telefónica y presencial del servicio de administración y maximización de renta de propiedades. <br>
-                        <strong>Logro:</strong> Incremento del valor de alquiler de propiedades de $6,000 a $12,000 mediante estrategias de posicionamiento y administración eficiente.
-                    </li>
-                    <li>
                         <strong>Megacable</strong><br>
                         Vendedor de Servicios (Contratos de Internet)<br>
                         <em>Duración: 1 año 1 mes (Hasta Septiembre 2026)</em><br>
                         Venta de contratos de internet para casas y negocios. Prospección, cierre de ventas y atención al cliente.
+                    </li>
+                    <li>
+                        <strong>Rentología (Negocio Propio)</strong><br>
+                        Vendedor y Administrador de Propiedades<br>
+                        <em>Duración: 15 años (2010 - 2025)</em><br>
+                        Venta telefónica y presencial del servicio de administración y maximización de renta de propiedades. <br>
+                        <strong>Logro:</strong> Incremento del valor de alquiler de propiedades de $6,000 a $12,000 mediante estrategias de posicionamiento y administración eficiente.
                     </li>
                     <li>
                         <strong>Fashion Celular</strong><br>
@@ -267,69 +417,104 @@
                     <li><strong>Español:</strong> Nativo</li>
                     <li><strong>Inglés:</strong> Nivel B1 (Comprensión de lectura y escucha; en proceso de mejora en conversación)</li>
                 </ul>
-
-                <div class="qr-section">
-                    <img src="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/codigo-qr-cv-virtual.png" alt="Código QR CV Virtual">
-                    <p>CV Virtual</p>
-                </div>
             </div>
         </div>
 
-        <!-- Sección de Documentos -->
-        <div class="documents-section">
-            <h2>Documentación Adjunta</h2>
-            
-            <button id="download-all" class="download-all-btn">📥 Abrir/Descargar Todos los Documentos</button>
-
-            <div class="doc-item">
-                <span class="doc-name">Acta de Nacimiento</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20Acta%20de%20nacimiento%20nuevo%20formato%20juan%20carlos.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">Cartilla Militar</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/CARTILLA.JPG" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">Título Profesional</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/TITULOTAMA%C3%91O-CARTAFRENTE--web.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">INE (Frente)</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20FRONTAL.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">INE (Reverso)</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20TRADERA.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">NSS (Documento)</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/NSS.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">RFC (Portada)</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20SAT%20PORTADA.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">RFC (Trasera)</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/2%20SAT%20TRASERA.jpg" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">Comprobante de Domicilio (CFE)</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf" target="_blank" class="download-btn">Ver / Descargar</a>
-            </div>
-            <div class="doc-item">
-                <span class="doc-name">Carta INE</span>
-                <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE_CARTA.pdf" target="_blank" class="download-btn">Ver / Descargar</a>
+        <!-- Sección de Documentos (oculta inicialmente) -->
+        <div class="documents-section no-print">
+            <button class="btn-toggle-docs" onclick="toggleDocs()">📂 Ver Documentos</button>
+            <div class="docs-container" id="docsContainer">
+                <button class="download-all-btn" onclick="downloadAll()">📥 Descargar Todos los Documentos</button>
+                
+                <div class="doc-item">
+                    <span class="doc-name">Acta de Nacimiento</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20Acta%20de%20nacimiento%20nuevo%20formato%20juan%20carlos.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20Acta%20de%20nacimiento%20nuevo%20formato%20juan%20carlos.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">Cartilla Militar</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/CARTILLA.JPG" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/CARTILLA.JPG" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">Título Profesional</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/TITULOTAMA%C3%91O-CARTAFRENTE--web.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/TITULOTAMA%C3%91O-CARTAFRENTE--web.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">INE (Frente)</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20FRONTAL.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20FRONTAL.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">INE (Reverso)</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20TRADERA.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE%20TRADERA.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">NSS (Documento)</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/NSS.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/NSS.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">RFC (Portada)</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20SAT%20PORTADA.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20SAT%20PORTADA.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">RFC (Trasera)</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/2%20SAT%20TRASERA.jpg" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/2%20SAT%20TRASERA.jpg" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">Comprobante de Domicilio (CFE)</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/recibo_cfe-4.pdf" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
+                <div class="doc-item">
+                    <span class="doc-name">Carta INE</span>
+                    <div class="doc-buttons">
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE_CARTA.pdf" target="_blank" class="btn-view">Ver</a>
+                        <a href="https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE_CARTA.pdf" download class="btn-download">Descargar</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/524492686705" class="whatsapp-btn" target="_blank">💬</a>
+    <a href="https://wa.me/524464044521" class="whatsapp-float no-print" target="_blank">💬</a>
+
+    <!-- Botón de Descargar PDF -->
+    <button class="print-btn no-print" onclick="window.print()">📄 Descargar CV en PDF</button>
 
     <script>
-        // Script para abrir todos los documentos en pestañas nuevas
-        document.getElementById('download-all').addEventListener('click', function() {
+        // Función para mostrar/ocultar documentos
+        function toggleDocs() {
+            const container = document.getElementById('docsContainer');
+            container.classList.toggle('active');
+        }
+
+        // Función para abrir todos los documentos
+        function downloadAll() {
             const links = [
                 'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/1%20Acta%20de%20nacimiento%20nuevo%20formato%20juan%20carlos.jpg',
                 'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/CARTILLA.JPG',
@@ -343,13 +528,12 @@
                 'https://raw.githubusercontent.com/celides/Ejecutivo-de-Ventas-y-Atenci-n-a-Clientes/main/INE_CARTA.pdf'
             ];
             
-            // Abre cada enlace en una pestaña nueva con un pequeño retraso para evitar bloqueos
             links.forEach((link, index) => {
                 setTimeout(() => {
                     window.open(link, '_blank');
                 }, index * 300); 
             });
-        });
+        }
     </script>
 
 </body>
